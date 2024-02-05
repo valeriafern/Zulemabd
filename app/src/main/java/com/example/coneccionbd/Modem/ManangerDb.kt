@@ -33,10 +33,10 @@ data class ManangerDb(val context: Context) {
         contenedor.put("coddep",25)
         //llamo metodo insert
 
+        val resul = bd.insert("ciudad",null,contenedor)
+        return  resul
 
 
-        val resul= bd.insert("ciudad",null,contenedor)
-            return resul
 
     }
 }

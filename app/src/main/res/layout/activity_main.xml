@@ -11,24 +11,26 @@
         android:id="@+id/editTextCodigo"
         android:layout_width="279dp"
         android:layout_height="50dp"
+        android:layout_marginTop="128dp"
         android:hint="Ingrese código"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="106dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="66dp" />
 
     <EditText
         android:id="@+id/editTextCiudad"
         android:layout_width="283dp"
         android:layout_height="45dp"
         android:hint="Ingrese ciudad"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCodigo"
+        tools:layout_editor_absoluteX="66dp" />
 
     <Button
         android:id="@+id/btnInsertar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Insertar"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="375dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextCiudad"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
