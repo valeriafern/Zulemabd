@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 
+
 data class ManangerDb(val context: Context) {
 
     lateinit var bd:SQLiteDatabase
@@ -21,6 +22,25 @@ data class ManangerDb(val context: Context) {
         bd=bdHelper.readableDatabase
 
     }
+
+//    fun  inserData(code:Int,ciudad:String,codep:Int):Long{
+//
+//        openBdWr() // abrir bd en modo escritura
+//
+//        //creo contenedor de valores para insertar data
+//        val  contenedor =ContentValues()
+//        contenedor.put("cod",code)
+//        contenedor.put("nombre",ciudad)
+//        contenedor.put("coddep",codep
+//        )
+//        //llamo metodo insert
+//
+//        val resul = bd.insert("ciudad",null,contenedor)
+//        return  resul
+//
+//
+//
+//    }
 
 //        fun  inserData():Long{
 //
@@ -40,20 +60,22 @@ data class ManangerDb(val context: Context) {
 //
 //        }
 
-    fun inserData(): Long {
+    fun inserData(codd:Int, nombred:String, apellidod: Int, telefonod:Int, direcciond:String, ciudadd:String): Long {
         openBdWr() // abrir bd en modo escritura
 
         //creo contenedor de valores para insertar data
         val contenedor = ContentValues()
-        contenedor.put("codd", 1)
-        contenedor.put("nombred", "vale")
-        contenedor.put("apellidod", "fernandez")
-        contenedor.put("telefonod", 3117455938)
-        contenedor.put("direcciond", "calle 69")
-        contenedor.put("ciudadd", "popayan")
+        contenedor.put("codigo", codd)
+        contenedor.put("nombre", nombred)
+        contenedor.put("apellido", apellidod)
+        contenedor.put("telefono", telefonod)
+        contenedor.put("direccion", direcciond)
+        contenedor.put("ciudad", ciudadd)
 
         //llamo metodo insert
         val resul = bd.insert("datos", null, contenedor)
         return resul
     }
+
+
 }

@@ -10,13 +10,18 @@ class BdHelper(
     //extender de la clase sqliteOpenHelper:
     override fun onCreate(db: SQLiteDatabase?) {
 
-        //db?.execSQL(Constantes.TABLA)
+        db?.execSQL(Constantes.TABLA)
+
+
         db?.execSQL(Constantes.TABLA2)
 
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-      db?.execSQL("DROP TABLE IF EXISTS datos")
+        db?.execSQL("DROP TABLE IF EXISTS ciudad")
+        db?.execSQL(
+            "DROP TABLE IF EXISTS datos"
+        )
         onCreate(db)
 
     }
